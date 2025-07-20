@@ -12,15 +12,19 @@ function ExploreTabs(){
 
     function tabSwitch(value){
         setCurrentTab(value);
-        const result = HomePageExplore.filter((course) => course.tag === value);
-        setCourses(result[0].courses);
-        setCurrentCard(result[0].courses[0].heading);
+        const result = HomePageExplore.find((course) => course.tag === value);
+        if (!result) {
+            console.warn(`No courses found for: ${value}`);
+            return;
+        }
+        setCourses(result.courses);
+        setCurrentCard(result.courses[0].heading);
     }
 
 
     return(
         <>
-            <div className="lg:flex gap-5 -mt-5 mb-52 mx-auto w-max p-1 text-richblack-200 font-thin bg-richblack-800 rounded-full font-medium drop-shadow-[0_1.5px_rgba(255,255,255,0.25)]">
+            <div className="lg:flex gap-5 -mt-5 mb-52 mx-auto w-max p-1 text-richblack-200 font-thin bg-richblack-800 rounded-full lg:font-medium drop-shadow-[0_1.5px_rgba(255,255,255,0.25)]">
                 {
                     tabs.map((ele, index) => {
                         return (

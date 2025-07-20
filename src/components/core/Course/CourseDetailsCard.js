@@ -18,8 +18,7 @@ const CourseDetailsCard = ({course, setConfirmationModal, handleBuyCourse}) => {
 
     const {
         thumbnail: ThumbnailImage,
-        price: CurrentPrice,
-        _id: courseId,
+        price: CurrentPrice
     } = course
 
     const handleShare = () => {
@@ -76,7 +75,7 @@ const CourseDetailsCard = ({course, setConfirmationModal, handleBuyCourse}) => {
                         </button>
 
                         {
-                            !user || !course?.studentEnrolled.includes(user._id)  && (
+                            (!user || !course?.studentEnrolled.includes(user._id))  && (
                                 <button onClick={handleAddToCart} className="blackButton">
                                     Add to Cart
                                 </button>

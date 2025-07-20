@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Error from "../pages/Error"
 import Footer from "../components/common/Footer"
-import Course_Card from '../components/core/catalog/Course_Card'
+import CourseCard from '../components/core/catalog/CourseCard'
 import CourseSlider from '../components/core/catalog/CourseSlider'
 import { useParams } from 'react-router-dom'
 import {categories} from "../services/apis"
@@ -24,8 +24,9 @@ const Catalog = () => {
                 setLoading(true);
                 const response = await apiConnector("GET", categories.CATEGORIES_API);
                 
-                const category_id = response?.data?.data?.
-                                    filter((id) => id.name.split(" ").join("-").toLowerCase() === catalogName)[0]._id;
+                const category_id = response?.data?.data?.filter(
+                    (id) => id.name.split(" ").join("-").toLowerCase() === catalogName
+                )[0]._id;
                 
                 setCategoryId(category_id);
                 setLoading(false);
@@ -152,7 +153,7 @@ const Catalog = () => {
                             catalogPageData?.data?.topSellingCourses
                             ?.slice(0, 4)
                             .map((course, index) => (
-                                <Course_Card course={course} key={index} Height={"h-[400px]"} />
+                                <CourseCard course={course} key={index} Height={"h-[400px]"} />
                             ))
                         }
                     </div>

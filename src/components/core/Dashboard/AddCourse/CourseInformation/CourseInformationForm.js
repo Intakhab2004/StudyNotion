@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form';
 import { useDispatch, useSelector } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
 import { fetchCourseCategories } from '../../../../../services/operation/courseDetailsAPI';
 import { HiOutlineCurrencyRupee } from 'react-icons/hi';
 import { MdNavigateNext } from 'react-icons/md';
@@ -27,7 +26,6 @@ const CourseInformationForm = () => {
     const {course, editCourse} = useSelector((state) => state.course);
     const {token} = useSelector((state) => state.auth);
     const dispatch = useDispatch();
-    const navigate = useNavigate();
     const [loading, setLoading] = useState(false);
     const [courseCategories, setCourseCategories] = useState([]);
 

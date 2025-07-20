@@ -18,9 +18,7 @@ const VideoDetails = () => {
     const {courseSectionData, courseEntireData, completedLectures} = useSelector((state) => state.viewCourse);
 
     const [videoData, setVideoData] = useState([]);
-    const [previewSource, setPreviewSource] = useState("");
     const [videoEnded, setVideoEnded] = useState(false);
-    const [loading, setLoading] = useState(false);
 
     useEffect(() => {
         ; (async () => {
@@ -38,7 +36,6 @@ const VideoDetails = () => {
                 )
 
                 setVideoData(filteredVideoData[0])
-                setPreviewSource(courseEntireData.thumbnail)
                 setVideoEnded(false)
           }
         })()
@@ -131,7 +128,6 @@ const VideoDetails = () => {
     }
 
     const handleLectureCompletion = async () => {
-        setLoading(true)
         const res = await markLectureAsComplete(
             { courseId: courseId, subSectionId: subSectionId },
             token
@@ -139,7 +135,6 @@ const VideoDetails = () => {
         if(res) {
             dispatch(updateCompletedLectures(subSectionId))
         }
-        setLoading(false)
     }
 
     return (

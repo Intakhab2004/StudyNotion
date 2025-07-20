@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { apiConnector } from '../../../services/apiConnector';
 import { contact } from '../../../services/apis';
@@ -23,6 +23,7 @@ function ContactUsForm() {
         try{
             setLoading(true)
             const response = await apiConnector("POST", CONTACTUS_API, data)
+            console.log(response);
 
             toast.success("Your message has been sent successfully");
             setLoading(false)

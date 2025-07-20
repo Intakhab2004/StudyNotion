@@ -1,15 +1,14 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import LightLogo from "../../assets/Logo/Logo-Full-Light.png"
-import { Link, matchPath, useLocation, useNavigate } from "react-router-dom";
+import { Link, matchPath, useLocation } from "react-router-dom";
 import { NavbarLinks } from "../../Data/navbar-links";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { ACCOUNT_TYPE } from "../../Util/constants";
 import { FaCartArrowDown } from "react-icons/fa";
 import ProfileDropDown from "../core/auth/ProfileDropDown";
 import { apiConnector } from "../../services/apiConnector";
 import { categories } from "../../services/apis";
 import { IoIosArrowDown } from "react-icons/io";
-import {logout} from "../../services/operation/AuthAPI"
 
 function Navbar(){
 
@@ -17,8 +16,6 @@ function Navbar(){
     const {user} = useSelector((state) => state.profile);
     const {totalItems} = useSelector((state) => state.cart);
 
-    const dispatch = useDispatch();
-    const navigate = useNavigate();
 
     const [subLinks, setSublinks] = useState([]);
     const [loading, setLoading] = useState(false);
