@@ -5,7 +5,7 @@ const {uplaodImageToCloudinary} = require("../utils/imageUploader");
 const Section = require("../models/Section");
 const SubSection = require("../models/SubSection");
 const CourseProgress = require("../models/CourseProgress");
-const {convertSecondsToDuration} = require("../utils/secToDuration")
+const {convertSecondsToDuration} = require("../utils/secConversion");
 require("dotenv").config();
 
 // Create Course handler function
