@@ -3,7 +3,7 @@ const Profile = require("../models/Profile");
 const {uplaodImageToCloudinary} = require("../utils/imageUploader");
 const Course = require("../models/Course");
 const CourseProgress = require("../models/CourseProgress");
-const { convertSecondsToDuration } = require("../utils/SecToDuration");
+const { convertSecondsToDuration } = require("../utils/secConversion");
 require("dotenv").config();
 
 
