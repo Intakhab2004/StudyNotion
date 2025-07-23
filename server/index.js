@@ -22,8 +22,21 @@ const contactRoute = require("./routes/ContactUs");
 // Middlewares
 app.use(express.json());
 app.use(cookieParser());
+
+const allowedOrigins = [
+    "https://study-notion-nu-flax.vercel.app", // Production Frontend
+    "http://localhost:3000" // Local Frontend (React default)
+];
+
 app.use(cors({
-    origin: "https://study-notion-nu-flax.vercel.app",
+    origin: function (origin, callback) {
+        if(!origin || allowedOrigins.includes(origin)){
+            callback(null, true);
+        } 
+        else{
+            callback(new Error("Not allowed by CORS"));
+        }
+    },
     credentials: true
 }));
 

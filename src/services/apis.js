@@ -1,4 +1,4 @@
-const BASE_URL = process.env.REACT_APP_BASE_URL
+const BASE_URL = process.env.REACT_APP_BASE_URL || "https://studynotion-36mb.onrender.com/api/v1"
 
 // Categories endpoints
 export const categories = {
