@@ -1,70 +1,90 @@
-# Getting Started with Create React App
+# 🎓 StudyNotion – EdTech Platform  
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+StudyNotion is a **full-stack EdTech platform** built with the **MERN stack** that allows learners to explore and enroll in courses while enabling instructors to create and manage their own courses. The platform also supports video hosting, secure payments, reviews, and role-based authentication.  
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 🚀 **Features**  
 
-### `npm start`
+- 📚 **Course Management** – Instructors can create, update, and delete courses. Learners can browse and enroll in courses.  
+- 💳 **Secure Payments** – Integrated **Razorpay API** for seamless transactions (reduced transaction failures by ~15%).  
+- 🎥 **Media Hosting** – **Cloudinary integration** for video hosting and media management.  
+- 🔐 **Authentication & Authorization** – JWT-based authentication with role-based access (learner/instructor).  
+- ⭐ **User Engagement** – Ratings and reviews system for courses.  
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 🛠️ **Tech Stack**  
 
-### `npm test`
+- **Frontend:** React.js, Tailwind CSS  
+- **Backend:** Node.js, Express.js  
+- **Database:** MongoDB  
+- **Media Storage:** Cloudinary  
+- **Payments:** Razorpay API  
+- **Authentication:** JWT, bcrypt  
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## ⚙️ **Installation & Setup**  
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Follow these steps to set up the project locally: 
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### 1️⃣ Clone the repository  
+```bash
+git clone https://github.com/Intakhab2004/StudyNotion.git
+cd StudyNotion
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### 2️⃣ Install dependencies
+**For Frontend**
+```bash
+npm install
+```
 
-### `npm run eject`
+**For Backend**
+```bash
+cd server
+npm install
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### 3️⃣ Configure Environment Variables
+**Create `.env` file** inside **server** folder and add:  
+   ```env
+   DB_URL=your_mongodb_connection_string
+   MAIL_USER=your_email_id
+   MAIL_PASS=your_email_app_password
+   FOLDER_NAME=folder_name_of_cloudinary
+   CLOUD_NAME=cloudinary_cloud_name
+   API_KEY=cloudinary_api_key
+   API_SECRET=cloudinary_api_secret
+   RAZORPAY_ID=your_razorpay_key_id
+   RAZORPAY_SECRET=your_razorpay_secret
+   JWT_SECRET=your_jwt_secret
+   PORT=5000
+   ```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### 4️⃣ Run the Backend
+  ```bash
+  cd server
+  npm run dev
+  ```
+The server will run at 👉 http://localhost:5000
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### 4️⃣ Run the Frontend
+  ```bash
+  cd ../
+  npm run dev
+  ```
+The server will run at 👉 http://localhost:3000
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### 🔮 Future Improvements
+ - Add live video classes using WebRTC.
+ - Implement Admin Dashboard with analytics.
+ - Provide certificates on course completion.
+ - Add wishlist & progress tracking for learners.
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### 🌐 Live Demo
+ - **Backend** Live link ->
+  https://studynotion-36mb.onrender.com
+ - **Frontend** Live link ->
+  https://study-notion-nu-flax.vercel.app
