@@ -33,7 +33,7 @@ export function login(email, password, navigate){
                             : `https://api.dicebear.com/5.x/initials/svg?seed=${result.data.existingUser.firstName} ${result.data.existingUser.lastName}`
             dispatch(setUser({ ...result.data.existingUser, image: userImage }))
 
-            localStorage.setItem("token", (result.data.token));
+            localStorage.setItem("token", JSON.stringify(result.data.token));
             localStorage.setItem("user", JSON.stringify({...result.data.existingUser, image: userImage}))
             navigate("/dashboard/my-profile")
         }
