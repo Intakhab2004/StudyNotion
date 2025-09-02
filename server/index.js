@@ -24,7 +24,6 @@ app.use(express.json());
 app.use(cookieParser());
 
 const allowedOrigins = [
-    "https://study-notion-intakhab-alams-projects-605e382d.vercel.app",
     "https://study-notion-nu-flax.vercel.app", // Production Frontend
     "http://localhost:3000" // Local Frontend (React default)
 ];
