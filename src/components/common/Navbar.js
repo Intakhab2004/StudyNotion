@@ -66,9 +66,12 @@ function Navbar(){
                                                                 subLinks.length ? (
                                                                     <>
                                                                         {
-                                                                            subLinks?.filter((sublink) => sublink?.course?.length > 0)
-                                                                            ?.map((subLink, index) => (
-                                                                                <Link to={`/catalog/${subLink.name.split(" ").join("-").toLowerCase()}`} className="rounded-lg bg-transparent py-4 pl-4 hover:bg-richblack-50" key={index}>
+                                                                            subLinks.map((subLink, index) => (
+                                                                                <Link
+                                                                                    to={`/catalog/${subLink.name.split(" ").join("-").toLowerCase()}`}
+                                                                                    className="rounded-lg bg-transparent py-4 pl-4 hover:bg-richblack-50"
+                                                                                    key={index}
+                                                                                >
                                                                                     <p>{subLink.name}</p>
                                                                                 </Link>
                                                                             ))

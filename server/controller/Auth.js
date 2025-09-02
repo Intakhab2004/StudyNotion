@@ -77,11 +77,9 @@ exports.sendOTP = async (req, res) => {
 // signUp controller
 exports.signUp = async (req, res) => {
     try{
+        // Fetching data from req.body
         const {firstName, lastName, email, password, confirmPassword, userType, contactNumber, otp} = req.body;
 
-        // Fetching data from req.body
-        
-        console.log(userType);
         // Validating the data
         if(!firstName || !lastName || !email || !password || !confirmPassword || !otp){
             return res.status(403).json({
